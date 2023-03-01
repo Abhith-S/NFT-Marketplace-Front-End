@@ -1,2 +1,2 @@
-NFT Marketplace Notes
+Front-End for full stack NFT Marketplace (currently building)
 
