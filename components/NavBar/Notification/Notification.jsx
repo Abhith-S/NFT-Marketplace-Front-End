@@ -1,8 +1,15 @@
 import React from 'react'
+import Image from 'next/image'
+
+//internal imports
+import Style from "./Notification.module.css";
+import images from "../../../img";
 
 const Notification = () => {
   return (
-    <div>Notification</div>
+    <div className={Style.notification}>
+
+    </div>
   )
 }
 

@@ -50,6 +50,45 @@ const NavBar = () => {
     }
   };
 
+  //function to open notifications
+  const openNotification = () => {
+    //if notification is false
+    if (!notification) {
+      //set notification to true
+      setNotification(true);
+
+      //set everything else to false
+      setDiscover(false);
+      setHelp(false);
+      setProfile(false);
+    } else {
+      setNotification(false);
+    }
+  };
+
+  const openProfile = () => {
+    //if profile is false
+    if (!profile) {
+      //set profile to true
+      setProfile(true);
+
+      //set everything else to false
+      setDiscover(false);
+      setHelp(false);
+      setNotification(false);
+    } else {
+      setProfile(false);
+    }
+  };
+
+  const openSideBar = () => {
+    if (!openSideMenu) {
+      setOpenSideMenu(true);
+    } else {
+      setOpenSideMenu(false);
+    }
+  };
+
   return (
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
@@ -110,8 +149,66 @@ const NavBar = () => {
           </div>
 
           {/* NOTIFICATION COMPONENT */}
+          <div className={Style.navbar_container_right_notify}>
+            {/* here we display the notifications icon */}
+            <MdNotifications
+              className={Style.notify}
+              onClick={() => openNotification}
+            />
+
+            {/* render the notification component here */}
+            {notification && <Notification />}
+          </div>
+
+          {/* CREATE BUTTON COMPONENT */}
+
+          <div className={Style.navbar_container_right_button}>
+            {/* render the button component here and we are sending in a props */}
+
+            <Button btnText="Create" />
+          </div>
+
+          {/* USER PROFILE COMPONENT */}
+          <div className={Style.navbar_container_right_profile_box}>
+            <div className={Style.navbar_container_right_profile}>
+              <Image
+                src={images.user1}
+                alt="Profile"
+                width={40}
+                height={40}
+                onClick={() => openProfile()}
+                className={Style.navbar_container_right_profile}
+              />
+
+              {/* render profile here */}
+              {profile && <Profile />}
+            </div>
+          </div>
+
+          {/* MENU BUTTON */}
+          {/* this is only  displayed on mobile device */}
+          <div className={Style.navbar_container_right_menuBtn}>
+            {/* display the button here */}
+            <CgMenuRight
+              className={Style.menuIcon}
+              onClick={() => openSideBar()}
+            />
+          </div>
         </div>
       </div>
+
+      {/* SIDEBAR COMPONENT */}
+      {/* this is also only displayed on mobile , that is why we are keeping it outside */}
+      {
+        // if openSideMenu is true then render sidebar component
+
+        openSideMenu && (
+          <div className={Style.SideBar}>
+            {/* we are passing a prop with state, so we can change it and close the sidebar */}
+            <SideBar setOpenSideMenu={setOpenSideMenu} />
+          </div>
+        )
+      }
     </div>
   );
 };
