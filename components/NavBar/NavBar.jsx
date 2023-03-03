@@ -153,7 +153,7 @@ const NavBar = () => {
             {/* here we display the notifications icon */}
             <MdNotifications
               className={Style.notify}
-              onClick={() => openNotification}
+              onClick={() => openNotification()}
             />
 
             {/* render the notification component here */}
@@ -205,6 +205,7 @@ const NavBar = () => {
         openSideMenu && (
           <div className={Style.SideBar}>
             {/* we are passing a prop with state, so we can change it and close the sidebar */}
+            {/* the props are received in SideBar.jsx file  */}
             <SideBar setOpenSideMenu={setOpenSideMenu} />
           </div>
         )
