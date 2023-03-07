@@ -1,0 +1,197 @@
+/* sidebar component and .navbar_container are inside navbar */
+.navbar{
+    /* take 100% of screen */
+    width : 100%;
+    /* give a thick outer layer around the navbar , 1 rem = 16px*/
+    padding-block: 1.5rem;
+    /* giving position relative will give like a the component being on top of other items 
+    or like its position will depend on position of other components */
+    position: relative;
+
+    /* zindedx is for the stacking position of item if we give it -1 it wiil be behind all;
+    the one with greater zindex will be displayed on top and rest follows 
+    here we give a really big number so its on top of everything*/
+    z-index: 1111111111;
+}
+
+/* navbar_container left and right are inside this */
+.navbar_container{
+    width : 80%;
+    /* the top/bottom margin is 0 ie no margin, and the left/right margin is auto ie 
+    The browser selects a suitable margin to use */
+    margin: 0 auto;
+    /* display items in grids */
+    display : grid;
+    /* repeat() takes 2 arguements how many items should be in grid and their size */
+    /* 1 fr = 225px */
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    /* how spacing is done between items,  */
+    justify-content: space-between;
+    /* gap between items */
+
+}
+
+.navbar_container_left{
+    display: grid;
+    /* defines the size of the columns */
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.navbar_container_left_box_input_box{
+    width: 60%;
+    /* we are going to give custom colors, we have to define them */
+    border: 1px solid var(--icons-color);
+    display : flex;
+    align-items: center;
+    padding: .5rem;
+    border-radius: 2rem;
+}
+
+/* this is for input text field */
+.navbar_container_left_box_input_box input{
+    width: 90%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.search_icon{
+    /* for hand type pointer on search icon */
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+/* Right section */
+.navbar_container_right{
+    display: grid;
+    /* aligns the items like discover , help center etc side by side */
+    grid-template-columns: 1fr 1fr .5fr 1fr 1fr .3fr;
+    /* gap between items */
+    gap: 1rem;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.navbar_container_right_discover{
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar_container_right_help{
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar_container_right_discover_box, .navbar_container_right_help_box{
+    position: absolute;
+    padding: 1rem .5rem;
+    box-shadow: var(--box-shadow);
+    font-size: 1rem;
+    width: 15rem;
+    border-radius: 1rem;
+    background-color: var(--main-bg-color);
+}
+
+.navbar_container_right_notify{
+    position: relative;
+    cursor: pointer;
+}
+
+/* for notification icon */
+.notify{
+    font-size: 2rem;
+}
+
+.navbar_container_right_button{
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar_container_right_profile_box{
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar_container_right_profile{
+    /* makes the profile image circle */
+    border-radius: 50%;
+}
+
+.navbar_container_right_menuBtn{
+    /* we don't want to display the button on pc only on mobile */
+    display: none;
+}
+
+.menuIcon{
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+/* SIDEBAR */
+
+.sideBar{
+    position: fixed;
+    top: 0;
+    width: 24rem;
+    background-color: var(--main-bg-color);
+    box-shadow: var(--box-shadow);
+    height: 100vh;
+    /* we want the user to scroll on the x axis */
+    overflow-y: auto;
+    display: none;
+    /* highrst number to make it top of eveerything */
+    z-index: 11111;
+}
+
+/* we don't want scrollbar for sideBar */
+.sideBar::-webkit-scrollbar{
+    display: none;
+}
+
+/* adjusting screen for mobile */
+@media screen and (min-device-width: 320px) and (max-device-width: 768px){
+    
+    .navbar_container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .navbar_container_left{
+        grid-template-columns: 1fr;
+    }
+
+    /* show 3 components on mobile screen and some componets are hiden which wll be show on sidebar*/
+    .navbar_container_right{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* HIDING FEW COMPONENTSs */
+    .navbar_container_right_menuBtn{
+        display: block;
+    }
+
+    .navbar_container_left_box_input_box{
+        display: none;
+    }
+
+    .navbar_container_right_discover{
+        display: none;
+    }
+
+    .navbar_container_right_help{
+        display: none;
+    }
+
+    .navbar_container_right_button{
+        display: none;
+    }
+
+    .sideBar{
+        display: block;
+    }
+
+
+
+}
+
