@@ -29,6 +29,7 @@
     /* how spacing is done between items,  */
     justify-content: space-between;
     /* gap between items */
+    gap: 1rem;
 
 }
 
@@ -71,7 +72,7 @@
     /* gap between items */
     gap: 1rem;
     align-items: center;
-    align-self: flex-end;
+    /* align-self: flex-end; */
 }
 
 .navbar_container_right_discover{
@@ -190,8 +191,6 @@
     .sideBar{
         display: block;
     }
-
-
 
 }
 

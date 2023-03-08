@@ -1,0 +1,13 @@
+/* fro the helpcenter menu dropdownbar */
+.helpCenter{
+    padding: .5rem 1rem;
+    /* for slowly changing propety or style on like hovering over or clicking etc */
+    transition: all .3s ease-in;
+}
+
+/*for the helpcenter menu dropdownbar */
+.helpCenter:hover{
+    background-color: var(--icons-color);
+    color: var(--shadow-dark-color);
+    border-radius: .3rem;
+}

@@ -16,6 +16,7 @@ const Notification = () => {
             alt="profile image"
             width={50}
             height={50}
+            className={Style.notification_box_img}
           />
         </div>
         {/* div for displaying user info */}

@@ -203,7 +203,7 @@ const NavBar = () => {
         // if openSideMenu is true then render sidebar component
 
         openSideMenu && (
-          <div className={Style.SideBar}>
+          <div className={Style.sideBar}>
             {/* we are passing a prop with state, so we can change it and close the sidebar */}
             {/* the props are received in SideBar.jsx file  */}
             <SideBar setOpenSideMenu={setOpenSideMenu} />

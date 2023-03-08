@@ -1,0 +1,14 @@
+/* fro the discover menu dropdownbar */
+.discover{
+    padding: .5rem 1rem;
+    /* for slowly changing propety or style on like hovering over or clicking etc */
+    transition: all .3s ease-in;
+    z-index: 222222222;
+}
+
+/*for the discover menu dropdownbar */
+.discover:hover{
+    background-color: var(--icons-color);
+    color: var(--shadow-dark-color);
+    border-radius: .3rem;
+}

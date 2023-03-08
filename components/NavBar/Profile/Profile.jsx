@@ -12,6 +12,7 @@ import Link from "next/link";
 
 const Profile = () => {
   return (
+    <div className={Style.profile}>
     <div className={Style.profile_account}>
       <Image
         src={images.user1}
@@ -25,7 +26,7 @@ const Profile = () => {
         <p>John McLane</p>
         <small>0x27613hjeads78342f..</small>
       </div>
-
+      </div>
       <div className={Style.profile_menu}>
         <div className={Style.profile_menu_one}>
           <div className={Style.profile_menu_one_item}>
