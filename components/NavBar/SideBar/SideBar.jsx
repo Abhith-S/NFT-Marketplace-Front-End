@@ -195,9 +195,10 @@ const SideBar = ({ setOpenSideMenu }) => {
 
       <div className={Style.sideBar_button}>
         {/* creatting buttons using Button component and giving their names as props */}
-
-        <Button btnName="Create" />
-        <Button btnName="Connect Wallet" />
+              
+              {/* passing props insode button to be send to button component */}
+        <Button btnName="Create" handleClick={ ()=>{}}/>
+        <Button btnName="Connect Wallet" handleClick={ ()=>{}}/>
       </div>
     </div>
   );

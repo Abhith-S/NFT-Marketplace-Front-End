@@ -165,7 +165,8 @@ const NavBar = () => {
           <div className={Style.navbar_container_right_button}>
             {/* render the button component here and we are sending in a props */}
 
-            <Button btnText="Create" />
+              {/* passing props to the button */}
+            <Button btnName="Create" handleClick={ ()=>{} }/>
           </div>
 
           {/* USER PROFILE COMPONENT */}

@@ -11,10 +11,11 @@
   --main-bg-color: #ecf0f3;
 
   /* we define colors for the box shadow */
-  --box-shadow: 1rem 1rem 1rem var(--shadow-dark-color), -1rem -1rem 1rem var(--shadow-light-color);
+  --box-shadow: 1rem 1rem 1rem var(--shadow-dark-color),
+  -1rem -1rem 1rem var(--shadow-light-color);
 
-  --box-shadow-2: 0rem 0rem 0rem var(--shadow-dark-color), -.3rem -.3rem 1rem var(--shadow-dark-color)
-
+  --box-shadow-2: 0rem 0rem 0rem var(--shadow-dark-color),
+  -.3rem -.3rem 1rem var(--shadow-dark-color)
 
 }
 
