@@ -7,7 +7,7 @@ import { TbArrowBigLeftLines, TbArrowBigRightLine } from "react-icons/tb";
 //internal import
 import Style from "./BigNFTSlider.module.css";
 import images from "../../img";
-import { Button } from "../Button/Button";
+import Button from "../Button/Button";
 
 const BigNFTSlider = () => {
   const [idNumber, setIdNumber] = useState(1);
@@ -80,9 +80,15 @@ const BigNFTSlider = () => {
       },
     },
   ];
+
+  //increment function
+  
+
+
   return (
     <div className={Style.BigNFTSlider}>
       <div className={Style.BigNFTSlider_box}>
+        {/* left side */}
         <div className={Style.BigNFTSlider_box_left}>
           {/* we want to display the slider data here */}
           {/* we are using idNumber here so if idNumber is 1 it will display 1st object data */}
@@ -171,10 +177,39 @@ const BigNFTSlider = () => {
                 <p>{sliderData[idNumber].time.seconds}</p>
                 <span>secs</span>
               </div>
-
             </div>
-                
+          </div>
 
+          <div className={Style.BigNFTSlider_box_left_button}>
+            {/* getting button component and sending the props */}
+            <Button btnName="Place" handleClick={() => {}} />
+            <Button btnName="View" handleClick={() => {}} />
+          </div>
+          <div className={Style.bigNFTSlider_box_left_sliderBtn}>
+            <TbArrowBigLeftLines
+              className={Style.bigNFTSlider_box_left_sliderBtn_icon}
+              onClick={() => dec()}
+            />
+            <TbArrowBigRightLine
+              className={Style.bigNFTSlider_box_left_sliderBtn_icon}
+              onClick={() => inc()}
+            />
+          </div>
+        </div>
+
+        {/* right side */}
+        <div className={Style.bigNFTSlider_box_right}>
+          <div className={Style.bigNFTSlider_box_right_box}>
+            <Image
+              src={sliderData[idNumber].nftImage}
+              alt="NFT IMAGE"
+              className={Style.bigNFTSlider_box_right_box_img}
+            />
+
+            <div className={Style.bigNFTSlider_box_right_box_like}>
+              <AiFillHeart />
+              <span>{sliderData[idNumber].like}</span>
+            </div>
           </div>
         </div>
       </div>
