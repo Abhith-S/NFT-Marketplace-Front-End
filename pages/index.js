@@ -1,8 +1,14 @@
-import React from 'react'
+import React from "react";
 
 //internal import
-import Style from "../styles/index.module.css"
-import { HeroSection , Service, BigNFTSlider, Subscribe } from '@/components/componentsindex'
+import Style from "../styles/index.module.css";
+import {
+  HeroSection,
+  Service,
+  BigNFTSlider,
+  Subscribe,
+  Title,
+} from "@/components/componentsindex";
 
 const Home = () => {
   return (
@@ -10,9 +16,13 @@ const Home = () => {
       <HeroSection />
       <Service />
       <BigNFTSlider />
+      <Title
+        heading="Browse by category"
+        paragraph="Explore the NFTs in the most featured categories"
+      />
       <Subscribe />
     </div>
-  )
-}
+  );
+};
 
 export default Home;
