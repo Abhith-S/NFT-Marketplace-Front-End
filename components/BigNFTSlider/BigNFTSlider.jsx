@@ -4,24 +4,23 @@ import { AiFillFire, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { MdVerified, MdTimer } from "react-icons/md";
 import { TbArrowBigLeftLines, TbArrowBigRightLine } from "react-icons/tb";
 
-//internal import
+//INTERNAL IMPORT
 import Style from "./BigNFTSlider.module.css";
 import images from "../../img";
 import Button from "../Button/Button";
 
-const BigNFTSlider = () => {
-  const [idNumber, setIdNumber] = useState(1);
+const BigNFTSilder = () => {
+  const [idNumber, setIdNumber] = useState(0);
 
   //data of nft
   const sliderData = [
     {
       title: "Hello NFT",
       id: 1,
-      name: "Jason",
-      collection: "Gym",
-      price: "0.0000003 ETH",
+      name: "Daulat Hussain",
+      collection: "GYm",
+      price: "00664 ETH",
       like: 243,
-      // image of creator
       image: images.user1,
       nftImage: images.nft_image_1,
       time: {
@@ -34,7 +33,7 @@ const BigNFTSlider = () => {
     {
       title: "Buddy NFT",
       id: 2,
-      name: "Sam",
+      name: "Shoaib Hussain",
       collection: "Home",
       price: "0000004 ETH",
       like: 243,
@@ -50,7 +49,7 @@ const BigNFTSlider = () => {
     {
       title: "Gym NFT",
       id: 3,
-      name: "Ryan",
+      name: "Raayan Hussain",
       collection: "GYm",
       price: "0000064 ETH",
       like: 243,
@@ -66,7 +65,7 @@ const BigNFTSlider = () => {
     {
       title: "Home NFT",
       id: 4,
-      name: "Jack",
+      name: "Raayan Hussain",
       collection: "GYm",
       price: "4664 ETH",
       like: 243,
@@ -81,50 +80,59 @@ const BigNFTSlider = () => {
     },
   ];
 
-  //increment function
-  
+  //-------INC
+  const inc = useCallback(() => {
+    if (idNumber + 1 < sliderData.length) {
+      setIdNumber(idNumber + 1);
+    }
+  }, [idNumber, sliderData.length]);
 
+  //-------DEC
+  const dec = useCallback(() => {
+    if (idNumber > 0) {
+      setIdNumber(idNumber - 1);
+    }
+  }, [idNumber]);
 
   return (
-    <div className={Style.BigNFTSlider}>
-      <div className={Style.BigNFTSlider_box}>
-        {/* left side */}
-        <div className={Style.BigNFTSlider_box_left}>
+    <div className={Style.bigNFTSlider}>
+      <div className={Style.bigNFTSlider_box}>
+        <div className={Style.bigNFTSlider_box_left}>
+
           {/* we want to display the slider data here */}
           {/* we are using idNumber here so if idNumber is 1 it will display 1st object data */}
           <h2>{sliderData[idNumber].title}</h2>
 
           {/* div for creator profile and data */}
-          <div className={Style.BigNFTSlider_box_left_creator}>
-            <div className={Style.BigNFTSlider_box_left_creator_profile}>
-              {/* for cretaor image */}
+          <div className={Style.bigNFTSlider_box_left_creator}>
+            <div className={Style.bigNFTSlider_box_left_creator_profile}>
+             {/* for cretaor image */}
               <Image
-                className={Style.BigNFTSlider_box_left_creator_profile_img}
+                className={Style.bigNFTSlider_box_left_creator_profile_img}
                 src={sliderData[idNumber].image}
-                alt="creator profile picture"
-                height={50}
+                alt="profile image"
                 width={50}
+                height={50}
               />
-
-              <div className={Style.BigNFTSlider_box_left_creator_profile_info}>
+              <div className={Style.bigNFTSlider_box_left_creator_profile_info}>
                 <p>Creator</p>
                 <h4>
                   {sliderData[idNumber].name}{" "}
                   <span>
-                    {/* for the  verified icon */}
+                   {/* for the  verified icon */}
                     <MdVerified />
                   </span>
                 </h4>
               </div>
             </div>
 
-            <div className={Style.BigNFTSlider_box_left_creator_collection}>
+            <div className={Style.bigNFTSlider_box_left_creator_collection}>
               <AiFillFire
-                className={Style.BigNFTSlider_box_left_creator_collection_icon}
+                className={Style.bigNFTSlider_box_left_creator_collection_icon}
               />
 
               <div
-                className={Style.BigNFTSlider_box_left_creator_collection_info}
+                className={Style.bigNFTSlider_box_left_creator_collection_info}
               >
                 <p>Collection</p>
                 <h4>{sliderData[idNumber].collection}</h4>
@@ -132,24 +140,23 @@ const BigNFTSlider = () => {
             </div>
           </div>
 
-          {/* bidding section */}
-          <div className={Style.BigNFTSlider_box_left_bidding}>
-            <div className={Style.BigNFTSlider_box_left_bidding_box}>
+            {/* bidding section */}
+          <div className={Style.bigNFTSlider_box_left_bidding}>
+            <div className={Style.bigNFTSlider_box_left_bidding_box}>
               <small>Current Bid</small>
               <p>
-                {sliderData[idNumber].price} <span>$22,100</span>
+                {sliderData[idNumber].price} <span>$221,21</span>
               </p>
             </div>
 
-            <p className={Style.BigNFTSlider_box_left_bidding_box_auction}>
+            <p className={Style.bigNFTSlider_box_left_bidding_box_auction}>
               <MdTimer
-                className={Style.BigNFTSlider_box_left_bidding_box_icon}
+                className={Style.bigNFTSlider_box_left_bidding_box_icon}
               />
-
               <span>Auction ending in</span>
             </p>
 
-            <div className={Style.BigNFTSlider_box_left_bidding_box_timer}>
+            <div className={Style.bigNFTSlider_box_left_bidding_box_timer}>
               <div
                 className={Style.bigNFTSlider_box_left_bidding_box_timer_item}
               >
@@ -178,13 +185,15 @@ const BigNFTSlider = () => {
                 <span>secs</span>
               </div>
             </div>
+
+            <div className={Style.bigNFTSlider_box_left_button}>
+              
+              {/* getting button component and sending the props */}
+              <Button btnName="Place" handleClick={() => {}} />
+              <Button btnName="View" handleClick={() => {}} />
+            </div>
           </div>
 
-          <div className={Style.BigNFTSlider_box_left_button}>
-            {/* getting button component and sending the props */}
-            <Button btnName="Place" handleClick={() => {}} />
-            <Button btnName="View" handleClick={() => {}} />
-          </div>
           <div className={Style.bigNFTSlider_box_left_sliderBtn}>
             <TbArrowBigLeftLines
               className={Style.bigNFTSlider_box_left_sliderBtn_icon}
@@ -217,4 +226,4 @@ const BigNFTSlider = () => {
   );
 };
 
-export default BigNFTSlider;
+export default BigNFTSilder;
