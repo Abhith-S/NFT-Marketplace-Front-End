@@ -2,7 +2,7 @@ import React from 'react'
 
 //internal import
 import Style from "../styles/index.module.css"
-import { HeroSection , Service, BigNFTSlider } from '@/components/componentsindex'
+import { HeroSection , Service, BigNFTSlider, Subscribe } from '@/components/componentsindex'
 
 const Home = () => {
   return (
@@ -10,6 +10,7 @@ const Home = () => {
       <HeroSection />
       <Service />
       <BigNFTSlider />
+      <Subscribe />
     </div>
   )
 }
